@@ -2,22 +2,21 @@ import * as React from 'react';
 import classnames from 'classnames';
 import styles from './test.sass';
 
+import {
+    API as api,
+    Event
+} from '@/api';
 
 export const App = () => {
-    const [apiResponse, setApiResponse] = React.useState([]);
+    const [apiResponse, setApiResponse] = React.useState([] as Array<Event>);
 
     React.useEffect(() => {
-        fetch('http://localhost:3000/json')
-            .then((response: any) => response.json())
-            .then((data: any) => {
-                setApiResponse(data);
-            });
+        api.getEvents((events) => setApiResponse(events))
     }, []);
 
     return (
         <div className={classnames(styles.container, 'test')}>
-            <p className='test'>Hello world</p>
-            {apiResponse.map((value, index) => <p key={index}>{value}</p>)}
+            {apiResponse.map((value, index) => <p key={index}>{value.title}</p>)}
         </div>
     );
 };
