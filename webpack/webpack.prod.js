@@ -41,6 +41,24 @@ module.exports = {
                     },
                 ],
             },
+            {
+                test: /\.css$/,
+                use: [
+                    MiniCssExtractPlugin.loader,
+                    'css-loader',
+                ],
+            },
+            {
+                test: /\.(png|jpe?g|gif)$/i,
+                use: [
+                    {
+                        loader: 'file-loader',
+                        options: {
+                            name: 'images/[name].[ext]',
+                        },
+                    },
+                ],
+            },
         ],
     },
     mode: 'production',

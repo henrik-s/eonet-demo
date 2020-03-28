@@ -19,7 +19,7 @@
         "url": ""
     },
     "author": "Henrik Sohlberg",
-    "license": "ISC",
+    "license": "",
     "homepage": "",
     "devDependencies": {
         "@babel/preset-env": "^7.8.7",
@@ -29,16 +29,18 @@
         "@types/jest": "^25.1.4",
         "@types/react": "16.9.23",
         "@types/react-dom": "16.9.5",
+        "@types/react-leaflet": "2.5.1",
         "@types/react-test-renderer": "^16.9.2",
+        "@types/underscore": "^1.9.4",
         "@typescript-eslint/parser": "^2.23.0",
         "babel-jest": "^25.1.0",
-        "classnames": "^2.2.6",
         "concurrently": "^5.1.0",
-        "cross-fetch": "^3.0.4",
         "css-loader": "^3.4.2",
         "eslint": "^6.8.0",
         "eslint-plugin-react": "^7.19.0",
         "express": "^4.17.1",
+        "file-loader": "^6.0.0",
+        "geojson": "^0.5.0",
         "html-webpack-plugin": "^4.0.2",
         "identity-obj-proxy": "^3.0.0",
         "jest": "^25.1.0",
@@ -46,8 +48,6 @@
         "node-sass": "^4.13.1",
         "nodemon": "^2.0.2",
         "nodemon-webpack-plugin": "^4.3.1",
-        "react": "^16.13.0",
-        "react-dom": "^16.13.0",
         "react-test-renderer": "^16.13.0",
         "sass-loader": "^8.0.2",
         "sass-resources-loader": "^2.0.1",
@@ -74,5 +74,16 @@
                 "babelConfig": ".babelrc"
             }
         }
+    },
+    "dependencies": {
+        "ag-grid-community": "^23.0.2",
+        "ag-grid-react": "^23.0.2",
+        "cross-fetch": "^3.0.4",
+        "classnames": "^2.2.6",
+        "leaflet": "^1.6.0",
+        "react-leaflet": "^2.6.3",
+        "react": "^16.13.0",
+        "react-dom": "^16.13.0",
+        "underscore": "^1.9.2"
     }
 }
