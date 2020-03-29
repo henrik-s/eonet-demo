@@ -22,8 +22,6 @@ const gridConfiguration = {
             valueFormatter: (params: any) => {
                 return params.value.toLocaleString();
             },
-            filter: 'agDateColumnFilter',
-            browserDatePicker: true,
         },
         {
             headerName: 'Title',
@@ -47,7 +45,7 @@ const gridConfiguration = {
     defaultColDef: {
         sortable: true,
         resizable: true,
-        filter: true,
+        filter: false,
         flex: 1,
         minWidth: 100,
         filterParams: {
