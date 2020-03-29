@@ -7,7 +7,7 @@ Simple client-side React application, displaying event data from [EONET](https:/
 
 Install node modules
 ```sh
-> make build
+> make init
 ```
 Start local development server, accessible at [localhost:9000](http://localhost:9000/)
 ```sh

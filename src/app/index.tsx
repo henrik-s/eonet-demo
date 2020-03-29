@@ -9,7 +9,7 @@ import {
     utils,
 } from '@/api';
 
-import * as Header from '@/app/Header/Header';
+import * as Header from '@/app/header/Header';
 import * as Grid from '@/app/grid/Grid';
 import * as Spinner from '@/app/spinner/Spinner';
 import * as Info from '@/app/info/Info';
