@@ -15,16 +15,25 @@ body
 
 .container
    display: flex
+   @include for-phone-only()
+      flex-wrap: no-wrap
+      flex-direction: column
    height: 100%
    > *
       margin: 10px
+      @include for-phone-only()
+         margin: 10px 0
 
    .gridContainer
       position: relative
       width: 100%
+      @include for-phone-only()
+         height: 400px
 
    .infoContainer
       width: 700px
+      @include for-phone-only()
+         width: 100%
 
    &.loading
       .gridContainer > div:first-child, .infoContainer
