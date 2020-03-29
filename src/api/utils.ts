@@ -1,4 +1,5 @@
 import _ from 'underscore';
+import moment from 'moment';
 
 import * as eonet from './entities';
 
@@ -17,4 +18,15 @@ export function getCategoryLabel(data: eonet.Event) {
     const test = _.reduce(data.categories, (prev: string, curr) => `${curr.title}, ${prev}`, '');
 
     return test.substring(0, test.length - 2);
+}
+
+export function getNumberOfDaysSince(days = 0, months = 0, years = 0) {
+    const from = moment()
+        .subtract(days, 'd')
+        .subtract(months, 'M')
+        .subtract(years, 'y');
+
+    const diff = moment.duration(moment().diff(from));
+
+    return Math.round(diff.asDays());
 }

@@ -8,6 +8,7 @@ import * as Filters from '@/app/filter/';
 interface Props extends Filters.Date.Props {
     status: Filters.Status.RadioOptions
     setStatus: (status: Filters.Status.RadioOptions) => void
+    onCategoryChange: (selectedOptions: Array<Filters.Category.Option>) => void
 }
 
 const Header = (props: Props) => {
@@ -21,8 +22,8 @@ const Header = (props: Props) => {
                 <FilterGroup title='Status'>
                     <Filters.Status.Component {...props} />
                 </FilterGroup>
-                <FilterGroup title='Category'>
-                    -
+                <FilterGroup title='Category' classNames={styles.category}>
+                    <Filters.Category.Component onChange={props.onCategoryChange} />
                 </FilterGroup>
             </div>
         </header>

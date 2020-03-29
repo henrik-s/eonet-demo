@@ -31,19 +31,12 @@ export interface Event {
     [EventFields.Closed]?: Date
 }
 
-interface Category {
+export interface Category {
     id: number
     title: string
     link: string
     description: string
     layers: string
-}
-
-interface Source {
-    id: string
-    title: string
-    source: string
-    link: string
 }
 
 export interface Geometry {

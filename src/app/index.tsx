@@ -6,6 +6,7 @@ import styles from './style.sass';
 import {
     API as api,
     eonet,
+    utils,
 } from '@/api';
 
 import * as Header from '@/app/Header/Header';
@@ -15,13 +16,15 @@ import * as Info from '@/app/info/Info';
 
 import * as Filters from '@/app/filter/';
 
-const INITIAL_FETCH_DAYS = 3;
+const INITIAL_FETCH_DAYS = utils.getNumberOfDaysSince(0, 1);
 
 export const App = () => {
     const [days, setDays] = React.useState({
         from: INITIAL_FETCH_DAYS, to: 0,
     });
     const [status, setStatus] = React.useState(Filters.Status.RadioOptions.All);
+    const [selectedCategories, setSelectedCategories] = React.useState([] as
+        Array<Filters.Category.Option>);
 
     const [rowData, setRowData] = React.useState([] as Array<eonet.Event>);
     const [selectedEvent, setSelectedEvent] = React.useState(null as eonet.Event);
@@ -68,6 +71,7 @@ export const App = () => {
     function filterData(): Array<eonet.Event> {
         let events = Filters.Status.filter(rowData, status);
         events = Filters.Date.filter(events, days);
+        events = Filters.Category.filter(events, selectedCategories);
 
         return events;
     }
@@ -76,6 +80,7 @@ export const App = () => {
         <div className={styles.container}>
             <Header.Component
                 days={days}
+                onCategoryChange={setSelectedCategories}
                 setDays={dateChange}
                 status={status}
                 setStatus={setStatus}

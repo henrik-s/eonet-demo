@@ -6,6 +6,8 @@
    .filterContainer
       display: flex
       justify-content: center
+      @include for-phone-only()
+         flex-direction: column
       .filterGroup
          color: white
          padding: 10px
@@ -16,6 +18,11 @@
             margin: 4px 0
          .body
             padding: 4px 0
+            color: black
+            font-size: 13px
 
       .date
          width: 260px
+      .category
+         min-width: 260px
+         max-width: 400px
