@@ -74,7 +74,6 @@ const Grid = (props: Props) => {
                 pagination={true}
                 paginationAutoPageSize={true}
                 defaultColDef={gridConfiguration.defaultColDef}
-                overlayNoRowsTemplate={'<i></i>'}
             />
         </div>
     );

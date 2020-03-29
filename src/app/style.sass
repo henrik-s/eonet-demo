@@ -13,28 +13,39 @@ body
 \:global(.leaflet-container)
    height: 400px
 
+$element-margin: 10px
+
 .container
    display: flex
-   @include for-phone-only()
-      flex-wrap: no-wrap
-      flex-direction: column
+   flex-direction: column
    height: 100%
    > *
-      margin: 10px
+      margin: $element-margin
       @include for-phone-only()
-         margin: 10px 0
+         margin: $element-margin 0
+   main
+      display: flex
+      @include for-phone-only()
+         flex-wrap: no-wrap
+         flex-direction: column
+      height: 100%
 
-   .gridContainer
-      position: relative
-      width: 100%
-      @include for-phone-only()
-         height: 400px
-
-   .infoContainer
-      width: 700px
-      @include for-phone-only()
+      .headerContainer
          width: 100%
 
-   &.loading
-      .gridContainer > div:first-child, .infoContainer
-         opacity: 0.2
+      .gridContainer
+         position: relative
+         width: 100%
+         margin-right: $element-margin
+         @include for-phone-only()
+            height: 400px
+            margin-right: 0
+
+      .infoContainer
+         width: 700px
+         @include for-phone-only()
+            width: 100%
+
+      &.loading
+         .gridContainer > div:first-child, .infoContainer
+            opacity: 0.2

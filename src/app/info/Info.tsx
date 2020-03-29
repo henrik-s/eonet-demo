@@ -48,11 +48,11 @@ const Info = (props: Props) => {
                             </div>
                         }
                         <div>
-                            <span className={styles.faded}>First report:</span>
+                            <span className={styles.faded}>First geometry:</span>
                             {utils.getEventDate(event, false).toLocaleString()}
                         </div>
                         <div>
-                            <span className={styles.faded}>Latest report:</span>
+                            <span className={styles.faded}>Last geometry:</span>
                             {utils.getEventDate(event).toLocaleString()}
                         </div>
                     </div>

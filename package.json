@@ -76,14 +76,17 @@
         }
     },
     "dependencies": {
+        "@types/react-datepicker": "^2.11.0",
         "ag-grid-community": "^23.0.2",
         "ag-grid-react": "^23.0.2",
-        "cross-fetch": "^3.0.4",
         "classnames": "^2.2.6",
+        "cross-fetch": "^3.0.4",
         "leaflet": "^1.6.0",
-        "react-leaflet": "^2.6.3",
+        "moment": "^2.24.0",
         "react": "^16.13.0",
+        "react-datepicker": "^2.14.1",
         "react-dom": "^16.13.0",
+        "react-leaflet": "^2.6.3",
         "underscore": "^1.9.2"
     }
 }
