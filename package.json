@@ -67,8 +67,16 @@
         "transform": {
             "^.+\\.(ts|tsx)$": "ts-jest"
         },
+        "moduleFileExtensions": [
+            "ts",
+            "tsx",
+            "js",
+            "jsx",
+            "node"
+        ],
         "moduleNameMapper": {
-            "\\.s[ac]ss$": "identity-obj-proxy"
+            "^@/(.*)$": "<rootDir>/src/$1",
+            "\\.s?[ac]ss$": "identity-obj-proxy"
         },
         "globals": {
             "ts-jest": {
